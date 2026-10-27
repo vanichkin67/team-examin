@@ -1,1 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Makcasa';
+    src: url(shrefts/Makcasa-Regular.ttf);
+    src: url(shrefts/Makcasa-Regular.otf);
+}
+
+::selection {
+    background-color: #a06262;
+    color: white;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    /* align-items: center;      !!!TREBA PO CENTRU */
+    z-index: 9;
+    width: 100%;
+    height: 60px;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav a {
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: #a06262;
+    transform: translateY(-5px) ;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+/*              nada dobavity peremini
+:root {
+    
+} 
+
+*/
+
+
+.title-porshe {
+    font-size: 50px;
+    color: #a06262;
+    text-align: center;
+    margin-top: 20px;
+}
 
