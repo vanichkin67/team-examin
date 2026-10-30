@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
-    font-family: 'Makcasa';
+    font-family: "Makcasa";
     src: url(shrefts/Makcasa-Regular.ttf);
     src: url(shrefts/Makcasa-Regular.otf);
 }
@@ -18,7 +22,7 @@
 header {
     position: fixed;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
     z-index: 9;
     width: 100%;
     height: 60px;
@@ -29,7 +33,6 @@ nav {
     gap: 30px;
     padding: 110px;
     font-size: 30px;
-    
 }
 
 nav a {
@@ -40,7 +43,7 @@ nav a {
 
 nav a:hover {
     color: #a06262;
-    transform: translateY(-5px) ;
+    transform: translateY(-5px);
 }
 
 a {
@@ -49,11 +52,10 @@ a {
 }
 /*              nada dobavity peremini
 :root {
-    
+
 } 
 
 */
-
 
 .title-porshe {
     font-size: 50px;
@@ -61,8 +63,6 @@ a {
     text-align: center;
     margin-top: 20px;
 }
-
-
 
 .card1 {
     width: 100%;
@@ -80,7 +80,7 @@ a {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('porshe-one.png');
+    background-image: url("porshe-one.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -89,13 +89,18 @@ a {
 .second {
     width: 100%;
     height: 100vh;
-    background-color: rgb(159, 159, 161);
+    background: linear-gradient(to right, #000000, #a06262);
 }
 
-.card-a, .card-b, .card-c {
+.card-a,
+.card-b,
+.card-c,
+.card-d,
+.card-e,
+.card-f {
     background: rgba(0, 0, 0, 0.752);
     backdrop-filter: blur(10px);
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     padding: 25px;
     border-radius: 20px;
     border: rgb(5, 4, 0) 5px solid;
@@ -110,4 +115,44 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     margin-left: 30px;
+}
+
+.card-b:hover,
+.card-e:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #fcfbfb;
+}
+
+.card-a:hover,
+.card-d:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #a06262;
+}
+
+.card-c:hover,
+.card-f:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 69px #000000;
+}
+
+.third {
+    width: 100%;
+    height: 100vh;
+    background-color: #a09962;
+}
+
+.firstp {
+    position: relative;
+    border: red 1px solid;
+    
+}
+
+.secondp {
+    position: relative;
+    border: #000000 1px solid;
+}
+
+.thirdp {
+    position: relative;
+    border: white 1px solid;
 }
