@@ -18,25 +18,27 @@
 header {
     position: fixed;
     display: flex;
-    /* align-items: center;      !!!TREBA PO CENTRU */
+    justify-content: center;    
     z-index: 9;
     width: 100%;
     height: 60px;
 }
 
-.nav {
+nav {
     display: flex;
     gap: 30px;
+    padding: 110px;
+    font-size: 30px;
+    
 }
 
-
-.nav a {
+nav a {
     font-size: 20px;
     font-weight: bold;
     transition: 0.5s;
 }
 
-.nav a:hover {
+nav a:hover {
     color: #a06262;
     transform: translateY(-5px) ;
 }
@@ -60,3 +62,34 @@ a {
     margin-top: 20px;
 }
 
+
+
+.card1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(porshe-slide-one.png);
+    background-size: cover;
+}
+
+
+.title-porshe {
+    position: absolute;
+    font-size: 80px;
+}
+
+
+.first {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('porshe-one.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.second {
+    width: 100%;
+    height: 100px;
+    bgcolor: #ee0000;
+}
