@@ -5,13 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Logo porshe.jpg\\\" class="icon">
-    <title>PORSHE</title>
+    <link rel="icon" href="Logo porshe.jpg" class="icon">
+    <link rel="stylesheet" href="src/output.css">
+    <title>PORSCHE</title>
 </head>
 
 <body>
+
     <header>
-        <h1 class="title-porshe">PORSHE</h1>
+        <button class="theme-toggle" id="themeToggle">
+            <span id="themeIcon">☀️</span>
+            <span id="themeText">Світла тема</span>
+        </button>
+
+        <script>
+            const themeToggle = document.getElementById("themeToggle");
+            const themeIcon = document.getElementById("themeIcon");
+            const themeText = document.getElementById("themeText");
+
+
+            let currentTheme = localStorage.getItem("theme") || "dark";
+
+            function applyTheme() {
+                if (currentTheme === "light") {
+                    document.body.classList.add("light");
+
+                    themeIcon.textContent = "🌙";
+                    themeText.textContent = "Темна тема";
+                } else {
+                    document.body.classList.remove("light");
+
+                    themeIcon.textContent = "☀️";
+                    themeText.textContent = "Світла тема";
+                }
+            }
+
+            themeToggle.addEventListener("click", () => {
+                currentTheme =
+                    currentTheme === "dark" ? "light" : "dark";
+
+                localStorage.setItem("theme", currentTheme);
+
+                applyTheme();
+            });
+
+            applyTheme();
+        </script>
+        <div class="progres">
+            <div class="progressbar">
+                <img src="progressbarrr.png" class="imgbar" alt="Progress">
+            </div>
+        </div>
+        <h1 class="title-porshe">PORSCHE</h1>
         <nav>
             <a href="#home">home</a>
             <a href="#about">about</a>
@@ -21,45 +66,169 @@
         </nav>
     </header>
 
-    <div class="progressbar"><img src="PORSHE-icon.webp"></div>
-
-
-    <div class="first" id="home">
+    <div class="text-container" id="home">
+        <div class="word delay-1">WELCOME</div>
+        <div class="word delay-2">TO</div>
+        <div class="word delay-3">OUR</div>
+        <div class="word delay-4">WEBSITE</div>
     </div>
+    <div class="first" id="home"></div>
+
+
+
     <div class="second" id="about">
-    <div class="card">
+        <div class="card">
             <div class="card-a cards">
-                <h2 class="PressStart"><span class="number">1.</span> Легенда перегонів</h2>
-                <h3>Маквін — один із найвідоміших персонажів світу Тачок. Він став справжньою легендою завдяки своїй
-                    швидкості, перемогам і любові до перегонів.</h3>
+                <h2 class="PressStart"><span class="number">1. </span>Incredible Speed</h2>
+                <h3>Some Porsche models are extremely fast and can reach speeds of over 300 km/h. They combine power,
+                    precision, and amazing performance.</h3>
             </div>
             <div class="card-b cards">
-                <h2 class="PressStart"><span class="number">2.</span> Швидкість і талант</h2>
-                <h3>Маквін дуже швидкий та має великий талант до перегонів. Він постійно тренується, вчиться на своїх
-                    помилках і намагається стати ще кращим.</h3>
+                <h2 class="PressStart"><span class="number">2. </span>Rear Engine</h2>
+                <h3>The Porsche 911 has its engine at the rear of the car. This unique design helps give the car its
+                    special driving characteristics.</h3>
             </div>
             <div class="card-c cards">
-                <h2 class="PressStart"><span class="number">3.</span> Дружба та характер</h2>
-                <h3 class="emoji">Попри свою впевненість, Маквін розуміє, що перемога — це не найважливіше. Він цінує
-                    друзів, допомагає іншим і ніколи не здається перед труднощами.</h3>
+                <h2 class="PressStart"><span class="number">3. </span>Electric Power</h2>
+                <h3 class="emoji">The Porsche Taycan is a powerful electric car. It combines modern technology with
+                    impressive acceleration and a sporty design.</h3>
             </div>
             <div class="card-d cards">
-                <h2 class="PressStart"><span class="number">4.</span> Дружба та характер</h2>
-                <h3 class="emoji">Попри свою впевненість, Маквін розуміє, що перемога — це не найважливіше. Він цінує
-                    друзів, допомагає іншим і ніколи не здається перед труднощами.</h3>
+                <h2 class="PressStart"><span class="number">4. </span>Iconic Headlights</h2>
+                <h3 class="emoji">Porsche cars are known for their distinctive headlights. Their unique design makes
+                    them easy to recognize on the road.</h3>
             </div>
             <div class="card-e cards">
-                <h2 class="PressStart"><span class="number">5.</span> Дружба та характер</h2>
-                <h3 class="emoji">Попри свою впевненість, Маквін розуміє, що перемога — це не найважливіше. Він цінує
-                    друзів, допомагає іншим і ніколи не здається перед труднощами.</h3>
+                <h2 class="PressStart"><span class="number">5. </span>Unique Customization</h2>
+                <h3 class="emoji">Porsche customers can choose different colors, interior materials, and special
+                    features to make their cars unique.</h3>
             </div>
             <div class="card-f cards">
-                <h2 class="PressStart"><span class="number">6.</span> Дружба та характер</h2>
-                <h3 class="emoji">Попри свою впевненість, Маквін розуміє, що перемога — це не найважливіше. Він цінує
-                    друзів, допомагає іншим і ніколи не здається перед труднощами.</h3>
+                <h2 class="PressStart"><span class="number">6. </span>Racing Performance</h2>
+                <h3 class="emoji">Many Porsche models are inspired by racing cars. They offer excellent handling, strong
+                    performance, and advanced technology.</h3>
             </div>
+        </div>
     </div>
+
+    <div class="third w-screen h-screen" id="company">
+        <div class="firstp">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum deserunt sequi rem commodi totam. Minima
+            quos quas architecto aut culpa, eveniet impedit ipsa accusantium, facere aperiam commodi ad nulla a.
+        </div>
+
+        <div class="hover-3d image img2">
+            <!-- content -->
+            <figure class="max-w-100 rounded-2xl">
+                <img src="images (1).jpg" alt="3D card" />
+            </figure>
+            <!-- 8 empty divs needed for the 3D effect -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="hover-3d image img1">
+            <!-- content -->
+            <figure class="max-w-100 rounded-2xl">
+                <img src="images.jpg" alt="3D card" />
+            </figure>
+            <!-- 8 empty divs needed for the 3D effect -->
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="secondp">
+            <p>
+                <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam nam iure illum amet perspiciatis
+                    pariatur dolorem voluptatum distinctio praesentium dicta totam obcaecati, consequuntur numquam
+                    recusandae voluptatem soluta temporibus harum ea.</span>
+            </p>
+        </div>
+        <div class="thirdp">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus magni doloremque suscipit, error
+                libero perferendis corrupti obcaecati, et, cumque alias eius harum! Quae quibusdam temporibus unde.
+                Alias, corrupti? Repellendus, illum.
+            </p>
+        </div>
     </div>
+
+    <div class="porsche-case" id="cars">
+        <div class="porsches">
+            <img src="завантаження.jpg" alt="Porsche 911">
+            <div class="porsche">
+                <h3>Porsche 911</h3>
+                <p>Легендарний задньомоторний спорткар, який уже понад 60 років є еталоном динаміки, витонченого дизайну
+                    та німецької інженерії.</p>
+            </div>
+        </div>
+        <div class="porsches">
+            <img src="завантаження (1).jpg" alt="Porsche Cayenne">
+            <div class="porsche">
+                <h3>Porsche Cayenne</h3>
+                <p>Потужний та розкішний кросовер, який свого часу врятував компанію від фінансової кризи і довів, що
+                    позашляховик може мати характер справжнього трекового авто.</p>
+            </div>
+        </div>
+        <div class="porsches">
+            <img src="завантаження (2).jpg" alt="Porsche Taycan">
+            <div class="porsche">
+                <h3>Porsche Taycan</h3>
+                <p>Інноваційний повністю електричний спорткар, який поєднав у собі фірмову керованість бренду,
+                    футуристичні технології та блискавичне прискорення.</p>
+            </div>
+        </div>
+        <div class="porsches">
+            <img src="завантаження (3).jpg" alt="Porsche Panamera">
+            <div class="porsche">
+                <h3>Porsche Panamera</h3>
+                <p>Елегантний чотиридверний фастбек бізнес-класу, створений для тих, хто прагне отримати комфорт
+                    преміального седана без компромісів зі швидкістю.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fifth" id="history">
+        <div class="card-history">
+            <div class="card-history-a cardsss">
+                <h2 class="PressStart gg"><span class="number">1. </span>Ferdinand Porsche</h2>
+                <h3>Ferdinand Porsche was the founder of the company. He was a talented engineer and designer who
+                    created the first Porsche cars.</h3>
+            </div>
+            <div class="card-history-b cardsss">
+                <h2 class="PressStart gg"><span class="number">2. </span>The First Porsche</h2>
+                <h3>The first Porsche car, the Porsche 356, was introduced in 1948. It was a small sports car that
+                    quickly gained popularity.</h3>
+            </div>
+            <div class="card-history-c cardsss">
+                <h2 class="PressStart gg"><span class="number">3. </span>The Iconic 911</h2>
+                <h3>The Porsche 911 is one of the most famous sports cars in the world. It has been produced since 1964
+                    and is known for its unique design and performance.</h3>
+            </div>
+            <div class="card-history-d cardsss">
+                <h2 class="PressStart gg"><span class="number">4. </span>Racing Success</h2>
+                <h3>Porsche has a long history of success in motorsports. The company has won many races and
+                    championships, including Le Mans and Formula E.</h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="fot">© 2026 Porsche. All rights reserved.<br>made by: vania, bohdan</p>
+    </footer>
+
 </body>
 
 </html>

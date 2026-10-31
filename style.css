@@ -1,133 +1,553 @@
+:root {
+    --primary-color: #a06262;
+    --accent-color: #de24cb;
+    --orange-color: #f57b18;
+    --gold-shadow: #cda15a;
+    --bg-dark: #080808;
+    --bg-card: rgba(20, 15, 15, 0.9);
+    --bg-third-p: rgba(10, 10, 30, 0.9);
+    --text-white: #ffffff;
+    --text-gray: #cccccc;
+    --border-dark: #392323;
+    --font-main: "Makcasa", sans-serif;
+}
+
+body.light {
+    --primary-color: #d6a3a3;
+    --accent-color: #c65ab5;
+    --orange-color: #d68a4b;
+    --gold-shadow: #d9b99b;
+    --bg-dark: #fff8f6;
+    --bg-card: rgba(255, 255, 255, 0.92);
+    --bg-third-p: rgba(255, 245, 242, 0.95);
+    --text-white: #292020;
+    --text-gray: #665858;
+    --border-dark: #ead5d0;
+}
+
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-@font-face {
-    font-family: 'Makcasa';
-    src: url(shrefts/Makcasa-Regular.ttf);
-    src: url(shrefts/Makcasa-Regular.otf);
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 ::selection {
-    background-color: #a06262;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+@font-face {
+    font-family: "Makcasa";
+    src: url("shrefts/Makcasa-Regular.ttf"), url("shrefts/Makcasa-Regular.otf");
+}
+
+a {
+    color: var(--bg-dark);
+    text-decoration: none;
 }
 
 header {
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
     display: flex;
     justify-content: center;
-    z-index: 9;
+    align-items: center;
     width: 100%;
     height: 60px;
+}
+
+.title-porshe {
+    position: absolute;
+    top: 20px;
+    font-size: clamp(24px, 5vw, 50px);
+    font-weight: 100;
+    font-family: var(--font-main);
+    color: var(--primary-color);
+    text-align: center;
 }
 
 nav {
     display: flex;
     gap: 30px;
-    padding: 110px;
-    font-size: 30px;
-
+    padding-top: 110px;
+    font-size: 20px;
+    color: var(--primary-color);
 }
 
 nav a {
-    font-size: 20px;
+    z-index: 9;
+    padding: 47px 5px 30px;
+    font-size: clamp(14px, 2vw, 20px);
     font-weight: bold;
-    transition: 0.5s;
+    color: var(--text-white);
+    transition: transform 0.5s ease, color 0.5s ease;
 }
 
 nav a:hover {
-    color: #a06262;
-    transform: translateY(-5px) ;
+    color: var(--primary-color);
+    transform: translateY(-5px);
 }
 
-a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-/*              nada dobavity peremini
-:root {
-
-} 
-
-*/
-
-
-.title-porshe {
-    font-size: 50px;
-    color: #a06262;
-    text-align: center;
-    margin-top: 20px;
+.dropdown-content {
+    background: var(--bg-card);
+    color: var(--text-white);
+    border: 1px solid var(--primary-color);
 }
 
-
-
-.card1 {
-    width: 100%;
-    height: 100vh;
-    background-image: url(porshe-slide-one.png);
-    background-size: cover;
-}
-
-.title-porshe {
+.progres {
     position: absolute;
-    font-size: 80px;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+.progressbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: mashinka linear;
+    animation-timeline: scroll();
+}
+
+.progressbar img {
+    width: 100%;
+}
+
+.start {
+    position: absolute;
+    top: 310px;
+    left: 31%;
+    font-size: 45px;
+    color: var(--text-white);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.text-container {
+    overflow: hidden;
+}
+
+.word {
+    position: absolute;
+    z-index: 9;
+    padding: 30px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.delay-1 {
+    margin-top: 239px;
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    margin-top: 269px;
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    margin-top: 299px;
+    animation-delay: 0.7s;
+}
+
+.delay-4 {
+    margin-top: 329px;
+    animation-delay: 1s;
 }
 
 .first {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('porshe-one.png');
+    background-image: url("porshe-one.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .second {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right, #000000, #a06262);
+    min-height: 600px;
+    background: linear-gradient(to right, var(--bg-dark), var(--primary-color));
 }
 
-.card-a, .card-b, .card-c, .card-d, .card-e, .card-f {
-    background: rgba(0, 0, 0, 0.752);
-    backdrop-filter: blur(10px);
-    color:rgb(255, 255, 255);
-    padding: 25px;
-    border-radius: 20px;
-    border: rgb(5, 4, 0) 5px solid;
-    transition: 1s;
-    max-width: 450px;
-}
 .card {
     position: relative;
     display: grid;
-    text-align: center;
-    top: 200px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-left: 30px;
+    width: min(100%, 1400px);
+    padding: 0 30px;
+    text-align: center;
 }
 
+.cards,
+.cardsss {
+    width: 100%;
+    padding: 25px;
+    border-radius: 20px;
+    border: 5px solid var(--border-dark);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    color: var(--text-white);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
-.card-b:hover, .card-e:hover {
+.cards {
+    max-width: 450px;
+}
+
+.card-b:hover,
+.card-e:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px #fcfbfb;
 }
 
-.card-a:hover, .card-d:hover {
+.card-a:hover,
+.card-d:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 20px #a06262;
+    box-shadow: 0 0 20px var(--primary-color);
 }
 
-.card-c:hover, .card-f:hover {
+.card-c:hover,
+.card-f:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 69px #000000;
+    box-shadow: 0 0 69px var(--bg-dark);
+}
+
+.PressStart {
+    margin-bottom: 10px;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: bold;
+}
+
+.third {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw;
+    height: 100vh;
+    min-height: 700px;
+    background-image: url("proshe-a.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.firstp,
+.secondp,
+.thirdp {
+    width: clamp(280px, 40vw, 500px);
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid var(--orange-color);
+    background: var(--bg-third-p);
+    color: var(--text-white);
+    box-shadow: 0 0 20px var(--gold-shadow);
+}
+
+.firstp {
+    margin-top: 30px;
+}
+
+.secondp {
+    margin-top: 80px;
+    margin-left: clamp(20px, 35vw, 490px);
+}
+
+.thirdp {
+    margin-top: 80px;
+    margin-left: clamp(40px, 65vw, 990px);
+}
+
+.image {
+    position: absolute;
+    width: clamp(250px, 30vw, 450px);
+    box-shadow: -3px 11px 138px -45px rgba(198, 66, 66, 0.6);
+}
+
+.img1 {
+    top: 20px;
+    right: 50px;
+}
+
+.img2 {
+    top: 430px;
+    left: 10px;
+}
+
+.imgbar {
+    max-width: 30px;
+    max-height: 25px;
+}
+
+.porsche-case {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100vw;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.porsches {
+    position: relative;
+    height: clamp(250px, 40vh, 350px);
+    border-radius: 16px;
+    border: 1px solid rgba(160, 98, 98, 0.3);
+    overflow: hidden;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.porsches img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.porsche {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    color: var(--text-white);
+}
+
+.porsche h3 {
+    margin-bottom: 6px;
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--primary-color);
+}
+
+.porsche p {
+    font-size: clamp(11px, 1.2vw, 13px);
+    line-height: 1.4;
+    color: var(--text-gray);
+}
+
+.porsches:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(160, 98, 98, 0.3);
+}
+
+.porsches:hover img {
+    transform: scale(1.05);
+}
+
+.fifth {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background-image: url("porshe-three.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-history {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    width: min(90%, 1100px);
+    max-width: 1100px;
+}
+
+.cardsss {
+    text-align: center;
+}
+
+.card-history-a:hover,
+.card-history-b:hover,
+.card-history-c:hover,
+.card-history-d:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px var(--accent-color);
+}
+
+.gg {
+    color: var(--accent-color);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10%;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border: 1px solid var(--primary-color);
+    border-radius: 30px;
+    background: var(--bg-card);
+    color: var(--text-white);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(160, 98, 98, 0.25);
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-50%) scale(1.07);
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+#themeIcon {
+    font-size: 21px;
+}
+
+.fot {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to right, #000000, #fb04c6, #000000);
+    color: var(--text-white);
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes mashinka {
+    to {
+        transform: translateX(calc(100vw - 23px));
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+    }
+
+    .title-porshe {
+        position: relative;
+        top: 0;
+        margin-bottom: 5px;
+    }
+
+    nav {
+        gap: 15px;
+        padding-top: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 10px 5px;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .cards {
+        max-width: 100%;
+    }
+
+    .third {
+        height: auto;
+        padding: 40px 20px;
+        align-items: center;
+    }
+
+    .firstp,
+    .secondp,
+    .thirdp {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .porsche-case {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .card-history {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+        padding: 12px 15px;
+        transform: none;
+    }
+
+    .theme-toggle:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .second,
+    .fifth {
+        height: auto;
+        padding: 40px 0;
+    }
 }
