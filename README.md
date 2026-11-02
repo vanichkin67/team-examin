@@ -1,1 +1,1 @@
-update, done website workers are ivam and bohdan
+update, done website workers are ivan and bohdan
